@@ -4,22 +4,36 @@ A MicroPython library for interfacing with an [Aosong AM2320](http://www.aosong.
 
 This library focuses on using the I2C interface. The sensor also supports a 1-wire interface, available when pin 4 is connected to GND.
 
-#### Pinout
+![demo](docs/AM2320.jpg)
+
+#### Examples
+
+Basic measurement
 
 ```
-+---------+
-|xxxxxxxxx|
-|xxxxxxxxx|
-|xxxxxxxxx|
-|xxxxxxxxx|
-|xxxxxxxxx|
-+---------+
-  | | | |
-  1 2 3 4
+import am2320
+from machine import I2C, Pin
+i2c = I2C(scl=Pin(5), sda=Pin(4))
+sensor = am2320.AM2320(i2c)
+sensor.measure()
+print(sensor.temperature())
+print(sensor.humidity())
 ```
 
-1=VDD, 2=SDA, 3=GND, 4=SCL
+Continuous measurement
+
+```
+import time
+import am2320
+from machine import I2C, Pin
+i2c = I2C(scl=Pin(5), sda=Pin(4))
+sensor = am2320.AM2320(i2c)
+
+while True:
+	sensor.measure()
+	print(sensor.temperature())
+	print(sensor.humidity())
+	time.sleep_ms(4000)
+```
 
 For full documentation see http://micropython-am2320.rtfd.io/.
-
-![demo](docs/AM2320.jpg)
