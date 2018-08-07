@@ -10,7 +10,7 @@ This library focuses on using the I2C interface. The sensor also supports a 1-wi
 
 Basic measurement
 
-```
+```python
 import am2320
 from machine import I2C, Pin
 i2c = I2C(scl=Pin(5), sda=Pin(4))
@@ -22,7 +22,7 @@ print(sensor.humidity())
 
 Continuous measurement
 
-```
+```python
 import time
 import am2320
 from machine import I2C, Pin
@@ -37,3 +37,7 @@ while True:
 ```
 
 For full documentation see http://micropython-am2320.rtfd.io/.
+
+## License
+
+Licensed under the [MIT License](http://opensource.org/licenses/MIT).
