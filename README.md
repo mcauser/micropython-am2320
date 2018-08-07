@@ -1,6 +1,6 @@
 # MicroPython AM2320 I2C
 
-A MicroPython library for interfacing with an [Aosong AM2320](http://www.aosong.com/cn/products/details.asp?id=152) temperature and humidity sensor over I2C.
+A MicroPython library for interfacing with an [Aosong AM2320](http://www.aosong.com/products-32.html) temperature and humidity sensor over I2C.
 
 This library focuses on using the I2C interface. The sensor also supports a 1-wire interface, available when pin 4 is connected to GND.
 
