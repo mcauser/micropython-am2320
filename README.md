@@ -36,8 +36,9 @@ while True:
 	time.sleep_ms(4000)
 ```
 
-For full documentation see http://micropython-am2320.rtfd.io/.
 
 ## License
 
 Licensed under the [MIT License](http://opensource.org/licenses/MIT).
+
+Copyright (c) 2016 Mike Causer
